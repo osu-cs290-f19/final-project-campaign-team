@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+
+}
+
+header {
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  position: relative;
+  max-height: 200px;
+}
+
+.header-image-container {
+  max-height: inherit;
+}
+
+.header-image-container img{
+  max-height: inherit;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header a:hover {
+  text-decoration: none;
+}
