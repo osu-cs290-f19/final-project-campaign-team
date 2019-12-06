@@ -3,8 +3,10 @@
     <span class="post-title">{{title}}</span>
     <img class="post-image" src="{{imageURL}}" alt="imageURL">
     <span class="post-summary">{{summary}}</span>
-    {{#each tags}}
-      {{> tag text=this }}
-    {{/each}}
+    <div class="post-tags">
+      {{#each tags}}
+        {{> tag text=this }}
+      {{/each}}
+    </div>
   </div>
 </div>
