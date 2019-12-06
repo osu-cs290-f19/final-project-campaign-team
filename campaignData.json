@@ -1,3 +1,15 @@
-{
-  
-}
+[
+  {
+    "title": "This is a post-title",
+    "summary": "This is the summary of a post.",
+    "imageURL": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmumbrella.com.au%2Fwp-content%2Fuploads%2F2018%2F07%2FAustralia-Post-red-post-box.jpeg&f=1&nofb=1",
+    "tags": ["D&D", "4-Players", "Level: 4"]
+  },
+  {
+    "title": "This is a post-title",
+    "summary": "This is the summary of a post.",
+    "imageURL": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmumbrella.com.au%2Fwp-content%2Fuploads%2F2018%2F07%2FAustralia-Post-red-post-box.jpeg&f=1&nofb=1",
+    "tags": ["D&D", "4-Players", "Level: 4"]
+  }
+
+]
