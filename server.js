@@ -4,7 +4,7 @@ var exphbs = require('express-handlebars');
 var campaignData = require('./campaignData');
 
 var app = express();
-app.engine('handlebars', exphbs({ defaultLayout: 'NULL'}));
+app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 var port = process.env.PORT || 3000;
@@ -12,7 +12,7 @@ var port = process.env.PORT || 3000;
 
 
 app.get('/', function(req, res){
-  res.status(200).sendFile(__dirname + '/public/index.html');
+  res.status(200).render('indexTemplate', {campaignData: campaignData});
 })
 
 
