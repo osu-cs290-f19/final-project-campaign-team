@@ -38,9 +38,10 @@ h2 {
   font-size: 30px;
 }
 
-.banner-image-container{
+/* .banner-image-container{
   padding-left: 500px;
-}
+  width: 100%;
+} */
 
 .headerNav {
   display: inline-block;
