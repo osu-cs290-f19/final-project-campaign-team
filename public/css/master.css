@@ -111,6 +111,10 @@ header h1 a{
   background-color: black;
 }
 
+.post * {
+  pointer-events: none;
+}
+
 .post-content{
   display: flex;
   flex-direction: column;

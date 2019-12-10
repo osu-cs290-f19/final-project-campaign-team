@@ -60,7 +60,7 @@ function goToSinglePostPage (event) {
   console.log('click event: ', event);
   var clickedPost = event.target;
   var index = clickedPost.getElementsByClassName('array-index');
-  // console.log('index[0].textContent:', index[0].textContent);
+  console.log('index[0].textContent:', index[0].textContent);
   var destinationURL = '/post' + index[0].textContent;
   window.location.href = destinationURL;
 
