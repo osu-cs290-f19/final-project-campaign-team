@@ -6,18 +6,18 @@ function getHomePathFromURL() {
 
 function createTags () {
   var numPlayersDropdown = document.getElementById('filter-players');
-  var tagNumPlayers = String(numPlayersDropdown.options[numPlayersDropdown.selectedIndex].text) + " Players";
+  var tagNumPlayers = "Players: " + String(numPlayersDropdown.options[numPlayersDropdown.selectedIndex].text);
   var partyLevelDropdown = document.getElementById('filter-party-level');
-  var tagPartyLevel = "Level " + String(partyLevelDropdown.options[partyLevelDropdown.selectedIndex].text);
+  var tagPartyLevel = "Level: " + String(partyLevelDropdown.options[partyLevelDropdown.selectedIndex].text);
   var settingDropdown = document.getElementById('filter-campaign-setting');
-  var tagSetting = String(settingDropdown.options[settingDropdown.selectedIndex].text);
+  var tagSetting = "Setting: " + String(settingDropdown.options[settingDropdown.selectedIndex].text);
   var tags = [tagNumPlayers, tagPartyLevel, tagSetting];
   return tags;
 }
 
 
 function addPost () {
-  var title = document.getElementById('post-text-input').value.trim();
+  var title = document.getElementById('post-title-input').value.trim();
   var imageURL = document.getElementById('post-photo-input').value.trim();
   var summary = document.getElementById('post-summary-input').value.trim();
   var description = document.getElementById('post-contents-input').value.trim();
@@ -60,5 +60,8 @@ function addPost () {
 
 window.addEventListener('DOMContentLoaded', function() {
   var createPostButton = document.getElementById('filter-update-button');
-  createPostButton.addEventListener('click', addPost);
+  if(createPostButton){
+    createPostButton.addEventListener('click', addPost);
+  }
+
 })
