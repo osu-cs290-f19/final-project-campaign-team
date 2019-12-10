@@ -149,10 +149,10 @@ header h1 a{
 .filter-input-container{
   display: flex;
   margin-bottom: 20px;
-  padding: 5px;
-  background-color: grey;
+  padding: 10px;
+  background-color: black;
   border: 2px solid red;
-  width: 50%;
+  width: 60%;
 }
 
 #post-title-input{
@@ -167,13 +167,48 @@ header h1 a{
   width: 100%;
 }
 
+#summary-container{
+  width: 90%;
+  height: 75px;
+}
+
 #post-summary-input{
   margin-left: 5px;
   margin-right: 5px;
   width: 100%;
+  resize: none;
 }
+
+#contents-container{
+  width: 90%;
+  height: 200px;
+
+}
+
 #post-contents-input{
   margin-left: 5px;
   margin-right: 5px;
   width: 100%;
+  resize: none;
+}
+
+.drop-downs-container{
+  display: flex;
+  flex-direction: row;
+}
+
+#players-container{
+  margin-right: 20px;
+  width: 30%;
+}
+
+#party-level-container{
+  margin-right: 20px;
+  width: 30%;
+  overflow: auto;
+}
+
+#setting-container{
+  margin-right: 20px;
+  width: 30%;
 }
