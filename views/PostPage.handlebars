@@ -1,5 +1,5 @@
 <main class= "contents">
-  <h2>{{title}}</h2>
+  <h2 id="post-page-title">{{title}}</h2>
   <div class= "view-post">
 
     <div class="view-input-container">
@@ -7,18 +7,18 @@
     </div>
 
 
-    <div class="view-post-container">
+    <div class="view-post-container" id="view-summary-container">
       <label for="view-summary-post">Summary:</label>
       <span class="post-summary">{{summary}}</span>
     </div>
 
-    <div class="view-post-container">
+    <div class="view-post-container" id="view-description-container">
       <label for="view-description-post">Description:</label>
       <span class="post-description">{{description}}</span>
     </div>
 
 
-    <div class="view-post-container">
+    <div class="view-post-container" id="view-comments-container">
       <label for="view-comment-post">Comments:</label>
       <span class="post-comment">
 

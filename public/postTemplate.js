@@ -15,9 +15,9 @@ templates['post'] = template({"1":function(container,depth0,helpers,partials,dat
     + alias4(((helper = (helper = helpers.summary || (depth0 != null ? depth0.summary : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"summary","hash":{},"data":data,"loc":{"start":{"line":5,"column":31},"end":{"line":5,"column":42}}}) : helper)))
     + "</span>\r\n    <div class=\"post-tags\">\r\n"
     + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.tags : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":7,"column":6},"end":{"line":9,"column":15}}})) != null ? stack1 : "")
-    + "    </div>\r\n  </div>\r\n  <span class=\"array-index\">"
-    + alias4(((helper = (helper = helpers.num || (depth0 != null ? depth0.num : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"num","hash":{},"data":data,"loc":{"start":{"line":12,"column":28},"end":{"line":12,"column":35}}}) : helper)))
-    + "</span>\r\n</div>\r\n";
+    + "    </div>\r\n    <span class=\"array-index\">"
+    + alias4(((helper = (helper = helpers.num || (depth0 != null ? depth0.num : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"num","hash":{},"data":data,"loc":{"start":{"line":11,"column":30},"end":{"line":11,"column":37}}}) : helper)))
+    + "</span>\r\n  </div>\r\n</div>\r\n";
 },"usePartial":true,"useData":true});
 templates['tag'] = template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
     var helper;

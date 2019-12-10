@@ -142,6 +142,9 @@ header h1 a{
   background-color: red;
 }
 
+.array-index{
+  opacity: 0;
+}
 /**************************************************************/
 /********************* New Post Page Styling ******************/
 /**************************************************************/
@@ -222,4 +225,43 @@ header h1 a{
 #setting-container{
   margin-right: 20px;
   width: 33%;
+}
+
+/**************************************************************/
+/****************** Singular Post Page Styling ****************/
+/**************************************************************/
+
+#post-page-title{
+  font-size: 50px;
+  text-decoration: underline;
+  text-align: center;
+}
+
+.view-input-container img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  height: 60%;
+}
+
+label{
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.view-post-container{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 5px;
+  border: 2px solid red;
+  border-radius: 3px;
+}
+
+#view-summary-container{
+
+}
+
+#view-description-container .post-description{
+  white-space: pre-wrap;
 }
