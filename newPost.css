@@ -4,7 +4,10 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   background-color:#706D6A;
+  text-align: center;
 }
+
+
 
 a {
   text-decoration: none;
@@ -50,38 +53,7 @@ h2 {
   text-decoration: none;
 }
 
-/* #post-title-input{
-  border-radius: 10px;
-  padding: 10px;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%)
-} */
-
-#filter-update-button {
-  /* border-radius: 10px;
-  padding: 10px;
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%) */
-  /* position: fixed;
-  right: 30px;
-  bottom: 30px;
-  height: 60px;
-  width: 60px;
-  border: none;
-  border-radius: 30px;
-  font-size: 36px;
-  background-color: #f67811;
-  color: #fff;
-  cursor: pointer;
-  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25); */
-}
-
 /* body{
   background-color:#706D6A;
+
 } */
