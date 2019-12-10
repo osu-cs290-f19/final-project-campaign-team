@@ -26,7 +26,7 @@ app.post('/newPost/sendPost', function (req, res, next){
     });
     fs.writeFile(
       __dirname + '/campaignData.json',
-      JSON.stringify(campaignData, 2, null),
+      JSON.stringify(campaignData, null, 2),
       function (err){
         if (!err){
           res.status(200).send();
