@@ -155,10 +155,20 @@ header h1 a{
   width: 60%;
 }
 
+.title-photo-container{
+  display: flex;
+}
+#title-container{
+  margin-right: 20px;
+}
 #post-title-input{
   margin-left: 5px;
   margin-right: 5px;
   width: 100%;
+}
+
+#photo-container{
+  margin-right: 20px;
 }
 
 #post-photo-input{
@@ -168,7 +178,8 @@ header h1 a{
 }
 
 #summary-container{
-  width: 90%;
+  width: 97.1%;
+  margin-right: 20px;
   height: 75px;
 }
 
@@ -180,7 +191,7 @@ header h1 a{
 }
 
 #contents-container{
-  width: 90%;
+  width: 97.1%;
   height: 200px;
 
 }
@@ -199,16 +210,16 @@ header h1 a{
 
 #players-container{
   margin-right: 20px;
-  width: 30%;
+  width: 33%;
 }
 
 #party-level-container{
   margin-right: 20px;
-  width: 30%;
+  width: 33%;
   overflow: auto;
 }
 
 #setting-container{
   margin-right: 20px;
-  width: 30%;
+  width: 33%;
 }
