@@ -48,6 +48,7 @@ function addPost () {
         var responseBody = event.target.response;
         alert("Error saving post on server side: " + responseBody);
       } else {
+        alert("New Campaign Successfully Created!");
         var homePath = getHomePathFromURL() + '/';
         window.location.href = homePath;
       }
