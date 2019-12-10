@@ -15,6 +15,10 @@ app.get('/', function(req, res){
   res.status(200).render('indexTemplate', {campaignData: campaignData});
 })
 
+app.get('/newPost', function(req, res){
+  res.status(200).render('newPost');
+})
+
 
 app.use(express.static('public'));
 
