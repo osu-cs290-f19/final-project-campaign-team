@@ -1,3 +1,10 @@
+*{
+  font-family: 'Roboto', sans-serif;
+}
+
+/**************************************************************/
+/************************ Header Styling **********************/
+/**************************************************************/
 header{
   display:flex;
   justify-content: center;
@@ -14,6 +21,7 @@ body{
 
 header h1 a{
   align-self: center;
+  font-family: "Roboto Slab", serif;
   font-size: 1.6em;
   color: white;
 }
@@ -80,6 +88,10 @@ header h1 a{
   }
 }
 
+/**************************************************************/
+/************************* Body Styling ***********************/
+/**************************************************************/
+
 .posts-container{
   display:flex;
   flex-direction: column;
@@ -128,4 +140,40 @@ header h1 a{
   border: 1px solid black;
   border-radius: 2px;
   background-color: red;
+}
+
+/**************************************************************/
+/********************* New Post Page Styling ******************/
+/**************************************************************/
+
+.filter-input-container{
+  display: flex;
+  margin-bottom: 20px;
+  padding: 5px;
+  background-color: grey;
+  border: 2px solid red;
+  width: 50%;
+}
+
+#post-title-input{
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 100%;
+}
+
+#post-photo-input{
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 100%;
+}
+
+#post-summary-input{
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 100%;
+}
+#post-contents-input{
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 100%;
 }
