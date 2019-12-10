@@ -273,11 +273,23 @@ label{
 
 #view-comments-container div{
   display: flex;
-  flex-direction: column;
   margin-top: 5px;
-  margin-bottom: 5px;
-  padding: 3px;
-  padding-left: 6px;
+  margin-bottom: 10px;
+  padding: 10px;
+  /* padding-left: 6px; */
   background-color: #6d6666;
   border-radius: 3px;
+}
+
+#comment-votes{
+  flex-direction: row;
+  position: absolute;
+  align-self: center;
+  right: 20px;
+  margin: 0px;
+
+}
+
+#comment-votes button{
+  width: 60px;
 }
