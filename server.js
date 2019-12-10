@@ -14,6 +14,7 @@ var port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
+//Post a new campaign idea
 app.post('/newPost/sendPost', function (req, res, next){
   console.log(req.body);
   if (req.body && req.body.title && req.body.imageURL && req.body.summary && req.body.description && req.body.tags) {
@@ -40,17 +41,33 @@ app.post('/newPost/sendPost', function (req, res, next){
   }
 })
 
+//Home Page
 app.get('/', function(req, res){
   res.status(200).render('indexTemplate', {campaignData: campaignData});
 })
 
+//Get individual post page
+app.get('/post:number', function (req, res, next) {
+  pageNum = Number(req.params.number);
+  console.log('pageNum: ',pageNum);
+  console.log('campaignData[pageNum]: ', campaignData[pageNum] );
+  if (pageNum >= 0 && Number.isInteger(pageNum) && pageNum < campaignData.length){
+    res.status(200).render('postPage', campaignData[pageNum]);
+  } else {
+    next();
+  }
+})
+
+//Page with the form for a new campaign idea
 app.get('/newPost', function(req, res){
   res.status(200).render('newPost');
 })
 
-
+//Serve static file(pictures, css, etc)
 app.use(express.static('public'));
+app.use(express.static('post'));
 
+//404, page not found
 app.get('*', function (req, res) {
   res.status(404).render('404');
   //res.sendFile(__dirname + '/public/404.html');

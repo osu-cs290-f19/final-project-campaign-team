@@ -1,0 +1,39 @@
+<main class= "contents">
+  <h2>{{title}}</h2>
+  <div class= "view-post">
+
+    <div class="view-input-container">
+      <img src="{{imageURL}}" alt="This is the campaign logo">
+    </div>
+
+
+    <div class="view-post-container">
+      <label for="view-summary-post">Summary:</label>
+      <span class="post-summary">{{summary}}</span>
+    </div>
+
+    <div class="view-post-container">
+      <label for="view-description-post">Description:</label>
+      <span class="post-description">{{description}}</span>
+    </div>
+
+
+    <div class="view-post-container">
+      <label for="view-comment-post">Comments:</label>
+      <span class="post-comment">
+
+
+
+      </span>
+      {{#each comments}}
+        {{> comment}}
+      {{/each}}
+    </div>
+
+    <div class="add-comment-container">
+     <input type="text" placeholder="New Comment..">
+     <button type="button">Submit</button>
+    </div>
+
+  </div>
+</main>
