@@ -48,7 +48,8 @@ function addPost () {
         var responseBody = event.target.response;
         alert("Error saving post on server side: " + responseBody);
       } else {
-        window.location.href = getHomePathFromURL();
+        var homePath = getHomePathFromURL() + '/';
+        window.location.href = homePath;
       }
     });
     postRequest.send(requestBody);
