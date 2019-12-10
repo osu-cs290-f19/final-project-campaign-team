@@ -1,5 +1,6 @@
 header{
   display:flex;
+  justify-content: center;
   align-items: center;
   height: 200px;
   width: max;
@@ -12,17 +13,29 @@ body{
 }
 
 header h1 a{
+  align-self: center;
   font-size: 1.6em;
-  padding-left: 100px;
-  padding-right: 100px;
   color: white;
 }
 
+.header-image-container{
+  position: absolute;
+  align-self: center;
+  left: 0px;
+  margin-left: 12.5px;
+}
+
 .header-image-container img{
-  position: relative;
   height: 175px;
   width: 175px;
-  margin: 12.5px;
+}
+
+.banner-image-container{
+  align-self: center;
+  position:absolute;
+  margin-right: 12.5px;
+  right: 0px;
+  float: right;
 }
 
 .posts-container{
