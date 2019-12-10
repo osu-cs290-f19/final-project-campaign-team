@@ -15,7 +15,6 @@ function createTags () {
   return tags;
 }
 
-
 function addPost () {
   var title = document.getElementById('post-title-input').value.trim();
   var imageURL = document.getElementById('post-photo-input').value.trim();
@@ -57,6 +56,15 @@ function addPost () {
   }
 }
 
+function goToSinglePostPage (event) {
+  console.log('click event: ', event);
+  var clickedPost = event.target;
+  var index = clickedPost.getElementsByClassName('array-index');
+  // console.log('index[0].textContent:', index[0].textContent);
+  var destinationURL = '/post' + index[0].textContent;
+  window.location.href = destinationURL;
+
+}
 //Event Listeners for functions
 
 window.addEventListener('DOMContentLoaded', function() {
@@ -65,4 +73,8 @@ window.addEventListener('DOMContentLoaded', function() {
     createPostButton.addEventListener('click', addPost);
   }
 
+  var posts = document.getElementsByClassName('post');
+  for (var i = 0; i < posts.length; i++) {
+    posts[i].addEventListener('click', goToSinglePostPage);
+  }
 })
