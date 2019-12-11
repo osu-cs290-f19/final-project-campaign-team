@@ -59,9 +59,9 @@ app.post('/newPost/sendPost', function (req, res, next){
 
 //Post a new comments
 app.post('/post:number/addComment', function (req, res, next) {
-  console.log('req.body: ', req.body);
+  //console.log('req.body: ', req.body);
   var num = Number(req.params.number);
-  console.log('req.params.number: ', req.params.number);
+  //console.log('req.params.number: ', req.params.number);
   if (req.body && req.body.text && campaignData[num]){
     campaignData[num].comments.push({
       value: 0,
@@ -85,6 +85,54 @@ app.post('/post:number/addComment', function (req, res, next) {
     res.status(400).send("Incomplete information, failed to write to server");
   }
 
+})
+
+//add one to a comment
+app.post('/post:number/upvote', function (req , res, next) {
+  var num = Number(req.params.number);
+  if (req.body && req.body.index && campaignData[num]){
+    var value = Number(campaignData[num].comments[req.body.index].value);
+    value++;
+    campaignData[num].comments[req.body.index].value = value;
+    fs.writeFile(
+      __dirname + '/campaignData.json',
+      JSON.stringify(campaignData, null, 2),
+      function (err){
+        if (!err){
+          res.status(200).send();
+        } else {
+          res.status(500).send("Failed to write data on server side.");
+        }
+      }
+    );
+
+  } else {
+    res.status(400).send("Something went wrong! Upvote failed.");
+  }
+})
+
+//sub one from a comment
+app.post('/post:number/downvote', function (req , res, next) {
+  var num = Number(req.params.number);
+  if (req.body && req.body.index && campaignData[num]){
+    var value = Number(campaignData[num].comments[req.body.index].value);
+    value--;
+    campaignData[num].comments[req.body.index].value = value;
+    fs.writeFile(
+      __dirname + '/campaignData.json',
+      JSON.stringify(campaignData, null, 2),
+      function (err){
+        if (!err){
+          res.status(200).send();
+        } else {
+          res.status(500).send("Failed to write data on server side.");
+        }
+      }
+    );
+
+  } else {
+    res.status(400).send("Something went wrong! Upvote failed.");
+  }
 })
 
 //Home Page

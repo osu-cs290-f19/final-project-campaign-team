@@ -77,30 +77,90 @@ function addComment (event) {
       text: comment
   });
 
+    console.log('requestBody:', requestBody);
+    postRequest.setRequestHeader('Content-Type', 'application/json');
+
+    postRequest.addEventListener('load', function (event) {
+      if (event.target.status !== 200) {
+        var responseBody = event.target.response;
+        alert("Error saving comment on server side: " + responseBody);
+      } else {
+        //alert("New Campaign Comment Created!");
+        var commentTemplate = Handlebars.templates.comment;
+        var newCommentHTML = commentTemplate({
+          text: comment,
+          value: 0
+        });
+        var commentContainer = document.getElementById('comments-label');
+        commentContainer.insertAdjacentHTML('afterend', newCommentHTML);
+      }
+    });
+    postRequest.send(requestBody);
+  }
+}
+
+function addOne (event) {
+  var clickedButton = event.target;
+  var post = clickedButton.parentElement.parentElement;
+  var indexArray = post.getElementsByClassName('comment-index');
+  var index = indexArray[0].textContent;
+  //console.log('index: ', index);
+  var postRequest = new XMLHttpRequest();
+  var requestURL = window.location.pathname + '/upvote';
+  postRequest.open('POST', requestURL);
+  var requestBody = JSON.stringify({
+    index: index
+  });
   console.log('requestBody:', requestBody);
   postRequest.setRequestHeader('Content-Type', 'application/json');
 
   postRequest.addEventListener('load', function (event) {
     if (event.target.status !== 200) {
       var responseBody = event.target.response;
-      alert("Error saving comment on server side: " + responseBody);
+      alert("Error upvoting: " + responseBody);
     } else {
       //alert("New Campaign Comment Created!");
-      var commentTemplate = Handlebars.templates.comment;
-      var newCommentHTML = commentTemplate({
-        text: comment,
-        value: 0
-      });
-      var commentContainer = document.getElementById('comments-label');
-      commentContainer.insertAdjacentHTML('afterend', newCommentHTML);
+      var values = post.getElementsByClassName('post-value');
+      var valueString = values[0];
+      valueString = valueString.textContent.substr(7);
+      var value = Number(valueString);
+      console.log('valueString:', valueString);
+      value++;
     }
   });
   postRequest.send(requestBody);
 }
 
+function subOne (event) {
+  var clickedButton = event.target;
+  var post = clickedButton.parentElement.parentElement;
+  var indexArray = post.getElementsByClassName('comment-index');
+  var index = indexArray[0].textContent;
+  //console.log('index: ', index);
+  var postRequest = new XMLHttpRequest();
+  var requestURL = window.location.pathname + '/downvote';
+  postRequest.open('POST', requestURL);
+  var requestBody = JSON.stringify({
+    index: index
+  });
+  console.log('requestBody:', requestBody);
+  postRequest.setRequestHeader('Content-Type', 'application/json');
 
-
-
+  postRequest.addEventListener('load', function (event) {
+    if (event.target.status !== 200) {
+      var responseBody = event.target.response;
+      alert("Error downvoting: " + responseBody);
+    } else {
+      //alert("New Campaign Comment Created!");
+      var values = post.getElementsByClassName('post-value');
+      var valueString = values[0];
+      valueString = valueString.textContent.substr(7);
+      var value = Number(valueString);
+      console.log('valueString:', valueString);
+      value++;
+    }
+  });
+  postRequest.send(requestBody);
 }
 //Event Listeners for functions
 
@@ -120,5 +180,21 @@ window.addEventListener('DOMContentLoaded', function() {
   var createCommentButton = document.getElementById('add-comment-button');
   if(createCommentButton){
     createCommentButton.addEventListener('click', addComment);
+  }
+
+  var upvoteButtons = document.getElementsByClassName('upvote');
+  //console.log('upvoteButtons: ', upvoteButtons);
+  if(upvoteButtons){
+    for (var i = 0; i < upvoteButtons.length; i++) {
+      upvoteButtons[i].addEventListener('click', addOne);
+    }
+  }
+
+  var downvoteButtons = document.getElementsByClassName('downvote');
+  //console.log('downvoteButtons: ', downvoteButtons);
+  if(downvoteButtons){
+    for (var i = 0; i < downvoteButtons.length; i++) {
+      downvoteButtons[i].addEventListener('click', subOne);
+    }
   }
 })
