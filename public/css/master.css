@@ -369,6 +369,10 @@ label{
   width: 60px;
 }
 
+.comment-index{
+  opacity: 0;
+}
+
 button{
   border-radius: 5px;
   background-color: #bebaba;
