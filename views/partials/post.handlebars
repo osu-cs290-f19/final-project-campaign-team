@@ -4,9 +4,11 @@
     <img class="post-image" src="{{imageURL}}" alt="imageURL">
     <span class="post-summary">{{summary}}</span>
     <div class="post-tags">
-      {{#each tags}}
-        {{> tag text=this }}
-      {{/each}}
+      
+      <span class="post-tag">{{tags.[0]}}</span>
+      <span class="post-tag">{{tags.[1]}}</span>
+      <span class="post-tag">{{tags.[2]}}</span>
+
       <span class="array-index">{{num}}</span>
     </div>
   </div>

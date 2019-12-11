@@ -1,3 +1,5 @@
+var allPosts = [];
+
 function getHomePathFromURL() {
   var path = window.location.pathname;
   var pathParts = path.split('/');
@@ -162,9 +164,125 @@ function subOne (event) {
   });
   postRequest.send(requestBody);
 }
+
+function parsePostElem(postElem) {
+  var post = {};
+  post.title = postElem.querySelector('.post-title').textContent;
+  post.imageURL = postElem.querySelector('.post-image').src;
+  post.summary = postElem.querySelector('.post-summary').textContent;
+  post.index = postElem.querySelector('.array-index').textContent;
+  post.tags = [];
+  var postTags = postElem.getElementsByClassName('post-tag');
+  for(var i = 0; i < postTags.length; i++){
+    post.tags.push(postTags[i].textContent);
+  }
+  console.log('post: ', post);
+  return post;
+}
+
+function postPassesFilters (post, filters) {
+
+  if (filters.text) {
+    var title= post.title.toLowerCase();
+    var filterText = filters.text.toLowerCase();
+    if (title.indexOf(filterText) === -1) {
+      return false;
+    }
+  }
+
+  if (filters.setting && filters.setting != "Any") {
+    var found = false;
+    for(var i = 0; i < post.tags.length; i++){
+      if(post.tags[i].indexOf(filters.setting) >= 0 || post.tags[i] == "Setting: Any") {
+        found = true;
+      }
+    }
+    if (!found) return false;
+  }
+
+  if (filters.partyLevel && filters.partyLevel != "Any") {
+    var found = false;
+    var pLevel = "Level: " + filters.partyLevel;
+    for(var i = 0; i < post.tags.length; i++){
+      if(post.tags[i] == pLevel || post.tags[i] == "Level: Any") {
+        found = true;
+      }
+    }
+    if (!found) return false;
+  }
+
+  if (filters.numPlayers && filters.numPlayers != "Any") {
+    var found = false;
+    var nPlayers = "Players: " + filters.numPlayers;
+    for(var i = 0; i < post.tags.length; i++){
+      if(post.tags[i] == nPlayers || post.tags[i] == "Players: Any") {
+        found = true;
+      }
+    }
+    if (!found) return false;
+  }
+
+  return true;
+
+}
+
+function insertNewPost(title, imageURL, summary, index, tags){
+  console.log("title: ", title);
+  console.log("imageURL: ", imageURL);
+  console.log("summary: ", summary);
+  console.log("index: ", index);
+  console.log("tags: ", tags);
+  var nPost = Handlebars.templates.post({
+    title: title,
+    summary: summary,
+    tags: [tags[0], tags[1], tags[2]],
+    imageURL: imageURL,
+    num: index
+  });
+
+  var postsSection = document.getElementById('posts-container');
+  postsSection.insertAdjacentHTML('beforeend', nPost);
+}
+
+function doFilterUpdate() {
+
+  var filters = {
+    text: document.getElementById('nav-search-line').value.trim(),
+    setting: document.getElementById('nav-filter-campaign-setting').value.trim(),
+    partyLevel: document.getElementById('nav-filter-party-level').value.trim(),
+    numPlayers: document.getElementById('nav-filter-players').value.trim()
+  }
+  console.log('Filters: ', filters);
+  var postsContainer = document.getElementById('posts-container');
+  while(postsContainer.lastChild) {
+    postsContainer.removeChild(postsContainer.lastChild);
+  }
+  allPosts.forEach(function (post) {
+    if (postPassesFilters(post, filters)){
+      insertNewPost(post.title, post.imageURL, post.summary, post.index, post.tags);
+    }
+  });
+
+  var posts = document.getElementsByClassName('post');
+  if(posts){
+    for (var i = 0; i < posts.length; i++) {
+      posts[i].addEventListener('click', goToSinglePostPage);
+    }
+  }
+}
+
+
+
+
 //Event Listeners for functions
 
 window.addEventListener('DOMContentLoaded', function() {
+//remember all the posts
+  var postElems = document.getElementsByClassName('post');
+  for (var i = 0; i < postElems.length; i++) {
+    allPosts.push(parsePostElem(postElems[i]));
+  }
+
   var createPostButton = document.getElementById('filter-update-button');
   if(createPostButton){
     createPostButton.addEventListener('click', addPost);
@@ -196,5 +314,10 @@ window.addEventListener('DOMContentLoaded', function() {
     for (var i = 0; i < downvoteButtons.length; i++) {
       downvoteButtons[i].addEventListener('click', subOne);
     }
+  }
+
+  var searchButton = document.getElementById('search-button');
+  if(searchButton){
+    searchButton.addEventListener('click', doFilterUpdate);
   }
 })
