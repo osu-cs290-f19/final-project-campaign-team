@@ -39,7 +39,6 @@ function addPost () {
       tags: tags
     });
 
-    //console.log('requestBody:', requestBody);
     postRequest.setRequestHeader('Content-Type', 'application/json');
 
     postRequest.addEventListener('load', function (event) {
@@ -58,17 +57,14 @@ function addPost () {
 }
 
 function goToSinglePostPage (event) {
-  console.log('click event: ', event);
   var clickedPost = event.target;
   var index = clickedPost.getElementsByClassName('array-index');
-  //console.log('index[0].textContent:', index[0].textContent);
   var destinationURL = '/post' + index[0].textContent;
   window.location.href = destinationURL;
 }
 
 function addComment (event) {
   var comment = document.getElementById('new-comment-text').value;
-  console.log('comment: ', comment);
   if (!comment || comment == "New Comment.."){
     alert("Please enter text into the comment box and try again.");
   } else {
@@ -80,7 +76,6 @@ function addComment (event) {
       text: comment
   });
 
-    console.log('requestBody:', requestBody);
     postRequest.setRequestHeader('Content-Type', 'application/json');
 
     postRequest.addEventListener('load', function (event) {
@@ -107,7 +102,6 @@ function addOne (event) {
   var post = clickedButton.parentElement.parentElement;
   var indexArray = post.getElementsByClassName('comment-index');
   var index = indexArray[0].textContent;
-  //console.log('index: ', index);
   var postRequest = new XMLHttpRequest();
   var requestURL = window.location.pathname + '/upvote';
   postRequest.open('POST', requestURL);
@@ -126,9 +120,7 @@ function addOne (event) {
       var valueString = values[0];
       valueString = valueString.textContent.substr(7);
       var value = Number(valueString);
-      //console.log('valueString:', valueString);
       value++;
-      //console.log('values[0]: ', values[0]);
       values[0].textContent = 'Votes: ' + value;
     }
   });
@@ -140,7 +132,6 @@ function subOne (event) {
   var post = clickedButton.parentElement.parentElement;
   var indexArray = post.getElementsByClassName('comment-index');
   var index = indexArray[0].textContent;
-  //console.log('index: ', index);
   var postRequest = new XMLHttpRequest();
   var requestURL = window.location.pathname + '/downvote';
   postRequest.open('POST', requestURL);
@@ -154,12 +145,10 @@ function subOne (event) {
       var responseBody = event.target.response;
       alert("Error downvoting: " + responseBody);
     } else {
-      //alert("New Campaign Comment Created!");
       var values = post.getElementsByClassName('post-value');
       var valueString = values[0];
       valueString = valueString.textContent.substr(7);
       var value = Number(valueString);
-      //console.log('valueString:', valueString);
       value--;
       values[0].textContent = 'Votes: ' + value;
     }
@@ -178,7 +167,6 @@ function parsePostElem(postElem) {
   for(var i = 0; i < postTags.length; i++){
     post.tags.push(postTags[i].textContent);
   }
-  console.log('post: ', post);
   return post;
 }
 
@@ -229,11 +217,6 @@ function postPassesFilters (post, filters) {
 }
 
 function insertNewPost(title, imageURL, summary, index, tags){
-  console.log("title: ", title);
-  console.log("imageURL: ", imageURL);
-  console.log("summary: ", summary);
-  console.log("index: ", index);
-  console.log("tags: ", tags);
   var nPost = Handlebars.templates.post({
     title: title,
     summary: summary,
@@ -254,7 +237,6 @@ function doFilterUpdate() {
     partyLevel: document.getElementById('nav-filter-party-level').value.trim(),
     numPlayers: document.getElementById('nav-filter-players').value.trim()
   }
-  console.log('Filters: ', filters);
   var postsContainer = document.getElementById('posts-container');
   while(postsContainer.lastChild) {
     postsContainer.removeChild(postsContainer.lastChild);
@@ -303,7 +285,6 @@ window.addEventListener('DOMContentLoaded', function() {
   }
 
   var upvoteButtons = document.getElementsByClassName('upvote');
-  //console.log('upvoteButtons: ', upvoteButtons);
   if(upvoteButtons){
     for (var i = 0; i < upvoteButtons.length; i++) {
       upvoteButtons[i].addEventListener('click', addOne);
@@ -311,7 +292,6 @@ window.addEventListener('DOMContentLoaded', function() {
   }
 
   var downvoteButtons = document.getElementsByClassName('downvote');
-  //console.log('downvoteButtons: ', downvoteButtons);
   if(downvoteButtons){
     for (var i = 0; i < downvoteButtons.length; i++) {
       downvoteButtons[i].addEventListener('click', subOne);
