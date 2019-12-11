@@ -38,7 +38,8 @@ app.post('/newPost/sendPost', function (req, res, next){
       imageURL: req.body.imageURL,
       description: req.body.description,
       tags: req.body.tags,
-      comments: new Array
+      comments: new Array,
+      index: campaignData.length
     });
     //writeToFile();
     fs.writeFile(
