@@ -36,11 +36,6 @@ h2 {
   font-size: 30px;
 }
 
-/* .banner-image-container{
-  padding-left: 500px;
-  width: 100%;
-} */
-
 .headerNav {
   display: inline-block;
   width: 100%;
@@ -59,6 +54,8 @@ h2 {
   background-color: #BEBABA;
   color: black;
 }
+
+
 
 .headerNav input[type=text] {
   float: right;
@@ -92,4 +89,27 @@ h2 {
 }
 .site-title a:hover {
   text-decoration: none;
+}
+
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
 }
