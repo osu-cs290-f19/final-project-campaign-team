@@ -273,11 +273,7 @@ label{
 
 #view-comments-container div{
   display: flex;
-<<<<<<< HEAD
-  flex-direction: column;
-=======
   flex-direction: row;
->>>>>>> 329c31e5e81a13e7f58aa6dfbbcccfed2a905b33
   margin-top: 5px;
   margin-bottom: 10px;
   padding: 10px;
@@ -286,13 +282,6 @@ label{
   border-radius: 3px;
 }
 
-<<<<<<< HEAD
-.comment-votes{
-  flex-direction: row;
-  /* position: absolute; */
-  /* align-self: center; */
-  /* right: 20px; */
-=======
 .comment-container {
   display: flex;
   align-items: center;
@@ -307,20 +296,9 @@ label{
   align-items: center;
   right: 20px;
   margin: 0px;
->>>>>>> 329c31e5e81a13e7f58aa6dfbbcccfed2a905b33
 
 }
 
-<<<<<<< HEAD
-.comment-votes button{
-<<<<<<< HEAD
-=======
-  margin: 0px;
-  padding: 0px;
->>>>>>> 329c31e5e81a13e7f58aa6dfbbcccfed2a905b33
-=======
-
 #comment-votes button{
->>>>>>> d63f6124ee2fa852553bdd8c47ac0231937e0539
   width: 60px;
 }
