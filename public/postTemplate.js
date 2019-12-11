@@ -26,4 +26,13 @@ templates['tag'] = template({"compiler":[8,">= 4.3.0"],"main":function(container
     + container.escapeExpression(((helper = (helper = helpers.text || (depth0 != null ? depth0.text : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"text","hash":{},"data":data,"loc":{"start":{"line":1,"column":23},"end":{"line":1,"column":31}}}) : helper)))
     + "</span>\r\n";
 },"useData":true});
+templates['comment'] = template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
+    var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression;
+
+  return "<div class=\"comment-container\">\r\n  <div class=\"comment-text-container\">\r\n      <span class=\"post-comment\">"
+    + alias4(((helper = (helper = helpers.text || (depth0 != null ? depth0.text : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"text","hash":{},"data":data,"loc":{"start":{"line":3,"column":33},"end":{"line":3,"column":41}}}) : helper)))
+    + "</span>\r\n  </div>\r\n\r\n  <div class=\"comment-votes\">\r\n    <button type=\"button\" name=\"upvote\">Like</button>\r\n    <span class=\"post-value\">Votes: "
+    + alias4(((helper = (helper = helpers.value || (depth0 != null ? depth0.value : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"value","hash":{},"data":data,"loc":{"start":{"line":8,"column":36},"end":{"line":8,"column":45}}}) : helper)))
+    + "</span>\r\n    <button type=\"button\" name=\"downvote\">Dislike</button>\r\n  </div>\r\n</div>\r\n";
+},"useData":true});
 })();

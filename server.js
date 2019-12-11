@@ -14,17 +14,33 @@ var port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
+function writeToFile() {
+  fs.writeFile(
+    __dirname + '/campaignData.json',
+    JSON.stringify(campaignData, null, 2),
+    function (err){
+      if (!err){
+        res.status(200).send();
+      } else {
+        res.status(500).send("Failed to write data on server side.");
+      }
+    }
+  );
+}
+
 //Post a new campaign idea
 app.post('/newPost/sendPost', function (req, res, next){
-  console.log(req.body);
+  //console.log(req.body);
   if (req.body && req.body.title && req.body.imageURL && req.body.summary && req.body.description && req.body.tags) {
     campaignData.push({
       title: req.body.title,
       summary: req.body.summary,
       imageURL: req.body.imageURL,
       description: req.body.description,
-      tags: req.body.tags
+      tags: req.body.tags,
+      comments: new Array
     });
+    //writeToFile();
     fs.writeFile(
       __dirname + '/campaignData.json',
       JSON.stringify(campaignData, null, 2),
@@ -39,6 +55,36 @@ app.post('/newPost/sendPost', function (req, res, next){
   } else {
     res.status(400).send("Incomplete information, failed to write to server.");
   }
+})
+
+//Post a new comments
+app.post('/post:number/addComment', function (req, res, next) {
+  console.log('req.body: ', req.body);
+  var num = Number(req.params.number);
+  console.log('req.params.number: ', req.params.number);
+  if (req.body && req.body.text && campaignData[num]){
+    campaignData[num].comments.push({
+      value: 0,
+      text: req.body.text,
+      index: campaignData[num].comments.length
+    });
+    console.log('campaignData[num]: ', campaignData[num]);
+    fs.writeFile(
+      __dirname + '/campaignData.json',
+      JSON.stringify(campaignData, null, 2),
+      function (err){
+        if (!err){
+          res.status(200).send();
+        } else {
+          res.status(500).send("Failed to write data on server side.");
+        }
+      }
+    );
+
+  } else {
+    res.status(400).send("Incomplete information, failed to write to server");
+  }
+
 })
 
 //Home Page

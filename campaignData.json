@@ -19,15 +19,88 @@
       "Level: 4"
     ],
     "comments": [
-      {"value": 0,
-      "text": "This is such a great post!"},
-      {"value": 0,
-      "text": "I think the image is clever."},
-      {"value": 0,
-      "text": "Try being better next time."},
-      {"value": 0,
-      "text": "I hate this post!  You are dumb!"}
-    ]
+      {
+        "value": 0,
+        "text": "This is such a great post!",
+        "index": 0
+      },
+      {
+        "value": 0,
+        "text": "I think the image is clever.",
+        "index": 1
+      },
+      {
+        "value": 0,
+        "text": "Try being better next time.",
+        "index": 2
+      },
+      {
+        "value": 0,
+        "text": "I hate this post!  You are dumb!",
+        "index": 3
+      },
+      {
+        "value": 0,
+        "text": "Hello!",
+        "index": 4
+      },
+      {
+        "value": 0,
+        "text": "First!",
+        "index": 5
+      },
+      {
+        "value": 0,
+        "text": "This is a new comment",
+        "index": 6
+      },
+      {
+        "value": 0,
+        "text": "This is yet another comment",
+        "index": 7
+      },
+      {
+        "value": 0,
+        "text": "This is yet another comment",
+        "index": 8
+      },
+      {
+        "value": 0,
+        "text": "ANOTHER ONE!",
+        "index": 9
+      },
+      {
+        "value": 0,
+        "text": "ANOTHER ONE!",
+        "index": 10
+      },
+      {
+        "value": 0,
+        "text": "ANOTHER ONE!",
+        "index": 11
+      },
+      {
+        "value": 0,
+        "text": "Lets try this again",
+        "index": 12
+      },
+      {
+        "value": 0,
+        "text": "Wow, there are a lot of comments",
+        "index": 13
+      },
+      {
+        "value": 0,
+        "text": "So many comments!",
+        "index": 14
+      },
+      {
+        "value": 0,
+        "text": "Wow, there are so many!",
+        "index": 15
+      }
+    ],
+    "_locals": {}
   },
   {
     "title": "This is a post-title 3",
@@ -60,5 +133,53 @@
       "Level: Any",
       "Setting: Any"
     ]
+  },
+  {
+    "title": "Title",
+    "summary": "This is a summary",
+    "imageURL": "BrokenURL",
+    "description": "fs.writeFile(\n      __dirname + '/campaignData.json',\n      JSON.stringify(campaignData, null, 2),\n      function (err){\n        if (!err){\n          res.status(200).send();\n        } else {\n          res.status(500).send(\"Failed to write data on server side.\");\n        }\n      }\n    );\n\nthat was what I had copied.",
+    "tags": [
+      "Players: Any",
+      "Level: Any",
+      "Setting: Any"
+    ],
+    "comments": []
+  },
+  {
+    "title": "A title",
+    "summary": "Summed up real good",
+    "imageURL": "Broken image",
+    "description": "Contents",
+    "tags": [
+      "Players: Any",
+      "Level: Any",
+      "Setting: Any"
+    ],
+    "comments": []
+  },
+  {
+    "title": "A title",
+    "summary": "Summed up real good",
+    "imageURL": "Broken image",
+    "description": "Contents",
+    "tags": [
+      "Players: Any",
+      "Level: Any",
+      "Setting: Any"
+    ],
+    "comments": []
+  },
+  {
+    "title": "Title",
+    "summary": "Summary",
+    "imageURL": "Broken",
+    "description": "Contents",
+    "tags": [
+      "Players: Any",
+      "Level: Any",
+      "Setting: Any"
+    ],
+    "comments": []
   }
 ]
