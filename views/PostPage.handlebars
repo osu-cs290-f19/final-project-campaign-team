@@ -20,17 +20,14 @@
 
     <div class="view-post-container" id="view-comments-container">
       <label for="view-comment-post">Comments:</label>
-      <span class="post-comment">
-
-      </span>
       {{#each comments}}
         {{> comment}}
       {{/each}}
     </div>
 
     <div class="add-comment-container">
-     <input type="text" placeholder="New Comment..">
-     <button type="button">Submit</button>
+     <input type="text" id="new-comment-text" placeholder="New Comment..">
+     <button type="button" id="add-comment-button">Submit</button>
     </div>
 
   </div>
