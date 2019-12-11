@@ -120,6 +120,23 @@ header h1 a{
 .nav-filter-input-container label{
   font-weight: normal;
 }
+
+.search-container{
+  float: right;
+  width: 20%;
+  padding: 10px;
+  color: white;
+  font-size: 17px;
+  border-left: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+#search-button{
+  position: absolute;
+  right:0px;
+}
 /**************************************************************/
 /************************* Body Styling ***********************/
 /**************************************************************/
