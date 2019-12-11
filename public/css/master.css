@@ -296,9 +296,19 @@ label{
   align-items: center;
   right: 20px;
   margin: 0px;
+}
 
+.post-value{
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 #comment-votes button{
   width: 60px;
+}
+
+button{
+  border-radius: 5px;
+  background-color: #bebaba;
+  border: 1px solid black;
 }
