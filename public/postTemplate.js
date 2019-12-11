@@ -31,8 +31,10 @@ templates['comment'] = template({"compiler":[8,">= 4.3.0"],"main":function(conta
 
   return "<div class=\"comment-container\">\r\n  <div class=\"comment-text-container\">\r\n      <span class=\"post-comment\">"
     + alias4(((helper = (helper = helpers.text || (depth0 != null ? depth0.text : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"text","hash":{},"data":data,"loc":{"start":{"line":3,"column":33},"end":{"line":3,"column":41}}}) : helper)))
-    + "</span>\r\n  </div>\r\n\r\n  <div class=\"comment-votes\">\r\n    <button type=\"button\" name=\"upvote\">Like</button>\r\n    <span class=\"post-value\">Votes: "
-    + alias4(((helper = (helper = helpers.value || (depth0 != null ? depth0.value : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"value","hash":{},"data":data,"loc":{"start":{"line":8,"column":36},"end":{"line":8,"column":45}}}) : helper)))
-    + "</span>\r\n    <button type=\"button\" name=\"downvote\">Dislike</button>\r\n  </div>\r\n</div>\r\n";
+    + "</span>\r\n      <span class=\"comment-index\">"
+    + alias4(((helper = (helper = helpers.index || (depth0 != null ? depth0.index : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"index","hash":{},"data":data,"loc":{"start":{"line":4,"column":34},"end":{"line":4,"column":43}}}) : helper)))
+    + "</span>\r\n  </div>\r\n\r\n  <div class=\"comment-votes\">\r\n    <button type=\"button\" class=\"upvote\" name=\"upvote\">Like</button>\r\n    <span class=\"post-value\">Votes: "
+    + alias4(((helper = (helper = helpers.value || (depth0 != null ? depth0.value : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"value","hash":{},"data":data,"loc":{"start":{"line":9,"column":36},"end":{"line":9,"column":45}}}) : helper)))
+    + "</span>\r\n    <button type=\"button\" class=\"downvote\"  name=\"downvote\">Dislike</button>\r\n  </div>\r\n</div>\r\n";
 },"useData":true});
 })();
