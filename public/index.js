@@ -51,7 +51,6 @@ function addPost () {
         alert("New Campaign Successfully Created!");
         var homePath = getHomePathFromURL() + '/';
         window.location.href = homePath + 'post' + responseBody;
-        //console.log(responseBody);
       }
     });
     postRequest.send(requestBody);
@@ -115,7 +114,6 @@ function addOne (event) {
   var requestBody = JSON.stringify({
     index: index
   });
-  console.log('requestBody:', requestBody);
   postRequest.setRequestHeader('Content-Type', 'application/json');
 
   postRequest.addEventListener('load', function (event) {
@@ -128,8 +126,10 @@ function addOne (event) {
       var valueString = values[0];
       valueString = valueString.textContent.substr(7);
       var value = Number(valueString);
-      console.log('valueString:', valueString);
+      //console.log('valueString:', valueString);
       value++;
+      //console.log('values[0]: ', values[0]);
+      values[0].textContent = 'Votes: ' + value;
     }
   });
   postRequest.send(requestBody);
@@ -147,7 +147,6 @@ function subOne (event) {
   var requestBody = JSON.stringify({
     index: index
   });
-  console.log('requestBody:', requestBody);
   postRequest.setRequestHeader('Content-Type', 'application/json');
 
   postRequest.addEventListener('load', function (event) {
@@ -160,8 +159,9 @@ function subOne (event) {
       var valueString = values[0];
       valueString = valueString.textContent.substr(7);
       var value = Number(valueString);
-      console.log('valueString:', valueString);
-      value++;
+      //console.log('valueString:', valueString);
+      value--;
+      values[0].textContent = 'Votes: ' + value;
     }
   });
   postRequest.send(requestBody);
