@@ -311,11 +311,16 @@ label{
 
 }
 
+<<<<<<< HEAD
 .comment-votes button{
 <<<<<<< HEAD
 =======
   margin: 0px;
   padding: 0px;
 >>>>>>> 329c31e5e81a13e7f58aa6dfbbcccfed2a905b33
+=======
+
+#comment-votes button{
+>>>>>>> d63f6124ee2fa852553bdd8c47ac0231937e0539
   width: 60px;
 }
