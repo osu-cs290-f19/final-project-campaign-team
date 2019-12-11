@@ -273,6 +273,7 @@ label{
 
 #view-comments-container div{
   display: flex;
+  flex-direction: column;
   margin-top: 5px;
   margin-bottom: 10px;
   padding: 10px;
@@ -281,15 +282,14 @@ label{
   border-radius: 3px;
 }
 
-#comment-votes{
+.comment-votes{
   flex-direction: row;
-  position: absolute;
-  align-self: center;
-  right: 20px;
-  margin: 0px;
+  /* position: absolute; */
+  /* align-self: center; */
+  /* right: 20px; */
 
 }
 
-#comment-votes button{
+.comment-votes button{
   width: 60px;
 }
