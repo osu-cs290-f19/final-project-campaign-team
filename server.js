@@ -46,13 +46,13 @@ app.post('/newPost/sendPost', function (req, res, next){
       comments: new Array,
       index: campaignData.length
     });
-    //writeToFile();
+
     fs.writeFile(
       __dirname + '/campaignData.json',
       JSON.stringify(campaignData, null, 2),
       function (err){
         if (!err){
-          res.status(200).send();
+          res.status(200).send(String(campaignData.length - 1));
         } else {
           res.status(500).send("Failed to write data on server side.");
         }

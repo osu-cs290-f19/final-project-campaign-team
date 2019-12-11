@@ -39,7 +39,7 @@ function addPost () {
       tags: tags
     });
 
-    console.log('requestBody:', requestBody);
+    //console.log('requestBody:', requestBody);
     postRequest.setRequestHeader('Content-Type', 'application/json');
 
     postRequest.addEventListener('load', function (event) {
@@ -47,9 +47,11 @@ function addPost () {
         var responseBody = event.target.response;
         alert("Error saving post on server side: " + responseBody);
       } else {
+        var responseBody = event.target.response;
         alert("New Campaign Successfully Created!");
         var homePath = getHomePathFromURL() + '/';
-        window.location.href = homePath;
+        window.location.href = homePath + 'post' + responseBody;
+        //console.log(responseBody);
       }
     });
     postRequest.send(requestBody);
