@@ -7,7 +7,12 @@ var bodyParser = require('body-parser');
 var campaignData = require('./campaignData');
 
 var app = express();
-app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
+app.engine('handlebars', exphbs({
+    defaultLayout: 'main',
+    partialsDir  : [
+        //  path to your partials
+        path.join(__dirname, 'views/partials'),
+    ]}));
 app.set('view engine', 'handlebars');
 
 var port = process.env.PORT || 3000;

@@ -16,7 +16,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "build": "handlebars -f public/postTemplate.js views/partials/post.handlebars views/partials/comment.handlebars",
+    "build": "handlebars -f public/hbsTemplate.js views/partials/post.handlebars views/partials/tag.handlebars views/partials/comment.handlebars",
     "prestart": "npm run build"
   },
   "repository": {
