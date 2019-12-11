@@ -115,6 +115,8 @@ header h1 a{
 
 .nav-filter-input-container{
   color: black;
+  padding: 14.3px;
+  font-size: 20px;
 }
 
 .nav-filter-input-container label{
@@ -124,7 +126,7 @@ header h1 a{
 .search-container{
   float: right;
   width: 20%;
-  padding: 10px;
+  padding: 5px;
   color: white;
   font-size: 17px;
   border-left: none;
