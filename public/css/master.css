@@ -164,6 +164,11 @@ header h1 a{
   background-color: black;
 }
 
+.post:hover{
+  cursor: pointer;
+  border: 5px solid orange;
+}
+
 .post * {
   pointer-events: none;
 }
