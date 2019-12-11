@@ -50,6 +50,11 @@ header h1 a{
   float: right;
 }
 
+.banner-image-container img{
+  height: 175px;
+  width: 175px;
+}
+
 .headerNav {
   display: inline-block;
   width: 100%;
