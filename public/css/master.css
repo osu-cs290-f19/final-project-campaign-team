@@ -26,6 +26,10 @@ header h1 a{
   color: white;
 }
 
+.site-title a:hover{
+  cursor: default;
+}
+
 .header-image-container{
   position: absolute;
   align-self: center;
