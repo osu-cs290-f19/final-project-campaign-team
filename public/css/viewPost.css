@@ -55,8 +55,6 @@ h2 {
   color: black;
 }
 
-
-
 .headerNav input[type=text] {
   float: right;
   padding: 5px;
@@ -87,10 +85,10 @@ h2 {
   margin: 0 0 0 20px;
   padding-top: 30px;
 }
+
 .site-title a:hover {
   text-decoration: none;
 }
-
 
 .dropbtn {
   background-color: #4CAF50;
