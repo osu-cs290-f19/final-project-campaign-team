@@ -20,7 +20,13 @@
     ],
     "comments": [
       {"value": 0,
-      "text": "This is such a great post!"}
+      "text": "This is such a great post!"},
+      {"value": 0,
+      "text": "I think the image is clever."},
+      {"value": 0,
+      "text": "Try being better next time."},
+      {"value": 0,
+      "text": "I hate this post!  You are dumb!"}
     ]
   },
   {

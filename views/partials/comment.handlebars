@@ -1,2 +1,11 @@
-<span class="post-value">{{value}}</span>
-<span class="post-comment">{{text}}</span>
+<div class="comment-container">
+  <div class="comment-text-container">
+      <span class="post-comment">{{text}}</span>
+  </div>
+
+  <div class="comment-votes">
+    <button type="button" name="upvote">Like</button>
+    <span class="post-value">Votes: {{value}}</span>
+    <button type="button" name="downvote">Dislike</button>
+  </div>
+</div>
