@@ -91,11 +91,16 @@ header h1 a{
 .headerNav a:hover, .dropdown:hover .dropbtn {
   background-color: #bebaba;
   color: white;
+  border: none;
 }
 
 .dropdown {
   float: left;
   overflow: hidden;
+}
+
+.dropdown button{
+  border-radius: 0px;
 }
 
 .dropdown .dropbtn {
@@ -110,7 +115,7 @@ header h1 a{
 .dropdown-content {
   display: none;
   position: absolute;
-  min-width: 140px;
+  min-width: 132.2px;
   z-index: 1;
   max-height: 210px;
   overflow: hidden;
